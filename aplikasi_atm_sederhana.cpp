@@ -58,6 +58,39 @@ void checkBalance(char names[][50], double balances[], int currentUser)
     system("clear");
 }
 
+void deposit(double balances[], int currentUser)
+{
+    double amount;
+    printf("Masukkan jumlah setoran: Rp. ");
+    scanf("%lf", &amount);
+    balances[currentUser] += amount;
+    printf("Setoran berhasil! Saldo Anda sekarang: Rp. %.2f\n", balances[currentUser]);
+    printf("\n\nKetuk apapun untuk kembali.");
+    getchar();
+    getchar();
+    system("clear");
+}
+
+void changePin(int pin[], int currentUser)
+{
+    int newPin;
+    printf("Masukkan PIN baru (6 Digit): ");
+    scanf("%d", &newPin);
+    if (newPin >= 100000 && newPin <= 999999)
+    {
+        pin[currentUser] = newPin;
+        printf("PIN berhasil diubah!\n");
+    }
+    else
+    {
+        printf("PIN harus 6 digit!\n");
+    }
+    printf("\n\nKetuk apapun untuk kembali.");
+    getchar();
+    getchar();
+    system("clear");
+}
+
 int main()
 {
     char names[3][50] = {"Giri", "Riki", "Hilmi"};
@@ -99,6 +132,7 @@ int main()
         else if (choice == 3)
         {
             // SETOR TUNAI
+            deposit(balances, currentUser);
         }
         else if (choice == 4)
         {
@@ -107,6 +141,7 @@ int main()
         else if (choice == 5)
         {
             // UBAH PIN
+            changePin(pin, currentUser);
         }
         else if (choice == 6)
         {
