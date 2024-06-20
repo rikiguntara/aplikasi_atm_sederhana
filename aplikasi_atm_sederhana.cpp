@@ -12,7 +12,6 @@ void login(char names[][50], char banks[][50], int pin[], int *currentUser)
     {
         printf("Masukkan PIN (6 Digit): ");
         scanf("%d", &enteredPin);
-
         if (enteredPin >= 100000 && enteredPin <= 999999)
         {
             int isPinCorrect = 0;
@@ -20,7 +19,7 @@ void login(char names[][50], char banks[][50], int pin[], int *currentUser)
             {
                 if (enteredPin == pin[i])
                 {
-                    isPinCorrect = 1; // PIN benar
+                    isPinCorrect = 1;
                     if (strcmp(banks[i], "BCA") == 0)
                     {
                         strcpy(name, names[i]);
@@ -53,7 +52,7 @@ void checkBalance(char names[][50], double balances[], int currentUser)
 {
     system("clear");
     printf("Saldo Anda: Rp. %.2f\n", balances[currentUser]);
-    printf("\n\nKetuk apapun untuk kembali");
+    printf("\n\nKetuk apapun untuk kembali.");
     getchar();
     getchar();
     system("clear");
@@ -61,8 +60,6 @@ void checkBalance(char names[][50], double balances[], int currentUser)
 
 int main()
 {
-
-    // USER DATA
     char names[3][50] = {"Giri", "Riki", "Hilmi"};
     char banks[3][50] = {"BCA", "BRI", "BCA"};
     double balances[3] = {3500000, 2500000, 10000000};
