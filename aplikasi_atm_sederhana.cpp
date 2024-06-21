@@ -24,7 +24,7 @@ void login(char names[][50], char banks[][50], int pin[], int *currentUser)
                     {
                         strcpy(name, names[i]);
                         *currentUser = i;
-                        system("clear");
+                        system("cls");
                         printf("Selamat datang %s\n", name);
                         isLoginSuccess = 1;
                         break;
@@ -50,12 +50,12 @@ void login(char names[][50], char banks[][50], int pin[], int *currentUser)
 
 void checkBalance(char names[][50], double balances[], int currentUser)
 {
-    system("clear");
+    system("cls");
     printf("Saldo Anda: Rp. %.2f\n", balances[currentUser]);
     printf("\n\nKetuk apapun untuk kembali.");
     getchar();
     getchar();
-    system("clear");
+    system("cls");
 }
 
 void deposit(double balances[], int currentUser)
@@ -68,7 +68,7 @@ void deposit(double balances[], int currentUser)
     printf("\n\nKetuk apapun untuk kembali.");
     getchar();
     getchar();
-    system("clear");
+    system("cls");
 }
 
 void changePin(int pin[], int currentUser)
@@ -88,7 +88,7 @@ void changePin(int pin[], int currentUser)
     printf("\n\nKetuk apapun untuk kembali.");
     getchar();
     getchar();
-    system("clear");
+    system("cls");
 }
 
 int main()
